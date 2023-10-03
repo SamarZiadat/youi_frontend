@@ -1,0 +1,38 @@
+.NavBar {
+    background-color: #ffffff;
+    border: 1px solid #dadadf;
+}
+
+.NavLink {
+    padding: 5px;
+}
+
+.nav-link {
+    display: block;
+    padding: 0.5rem 1rem;
+    text-align: center;
+}
+
+.Active i {
+    color: #27213C;
+}
+
+#dropdownMenu {
+    color: #170312;
+    transition: color ease-in-out 0.3s;
+    padding: 5px;
+    text-align: right;
+}
+
+#dropdownItem {
+    display: block;
+    padding: 0.25rem 1.5rem;
+    clear: both;
+    font-weight: 400;
+    color: #170312;
+    text-align: inherit;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+    text-align: right;
+}
