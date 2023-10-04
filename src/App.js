@@ -14,12 +14,14 @@ import SignInForm from "./pages/auth/SignInForm";
 import NavBar from "./components/NavBar";
 import PostCreateForm from "./pages/posts/PostCreateForm";
 import PostPage from "./pages/posts/PostPage";
+import PostsPage from "./pages/posts/PostsPage";
 
 export const CurrentUserContext = createContext();
 export const SetCurrentUserContext = createContext();
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
+  const profile_id = currentUser?.profile_id || "";
 
   const handleMount = async () => {
     try {
@@ -41,7 +43,23 @@ function App() {
           <NavBar />
           <Container className={styles.Main}>
             <Switch>
-              <Route exact path="/" render={() => <h1>Home page</h1>} />
+            <Route
+            exact
+            path="/"
+            render={() => (
+              <PostsPage message="No results found. Adjust the search wording." />
+            )}
+          />
+          <Route
+            exact
+            path="/postsfeed"
+            render={() => (
+              <PostsPage
+                message="No results found. Adjust the search keyword or follow a user."
+                filter={`owner__followed__owner__profile=${profile_id}&`}
+              />
+            )}
+          />
               <Route exact path="/signin" render={() => <SignInForm />} />
               <Route exact path="/signup" render={() => <SignUpForm />} />
               <Route exact path="/posts/create" render={() => <PostCreateForm />} />
