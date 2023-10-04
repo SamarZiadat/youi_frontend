@@ -1,10 +1,11 @@
 // React imports
 import { Route, Switch } from "react-router-dom";
 import { createContext, useEffect, useState } from "react";
-// Component imports
+// Page and Component imports
 import SignUpForm from "./pages/auth/SignUpForm";
 import SignInForm from "./pages/auth/SignInForm";
 import NavBar from "./components/NavBar";
+import PostCreateForm from "./pages/posts/PostCreateForm";
 //CSS imports
 import styles from "./App.module.css";
 // Bootstrap imports
@@ -42,6 +43,7 @@ function App() {
               <Route exact path="/" render={() => <h1>Home page</h1>} />
               <Route exact path="/signin" render={() => <SignInForm />} />
               <Route exact path="/signup" render={() => <SignUpForm />} />
+              <Route exact path="/posts/create" render={() => <PostCreateForm />} />
               <Route render={() => <p>Page not found!</p>} />
             </Switch>
           </Container>

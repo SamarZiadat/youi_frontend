@@ -1,0 +1,11 @@
+.Asset {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+}
+
+.Spinner {
+    color: #6A8E7F;
+}
