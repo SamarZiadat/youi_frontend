@@ -9,14 +9,10 @@ import { useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import Post from "./Post";
 
-import { useCurrentUser } from "../../contexts/CurrentUserContext";
-
 
 function PostPage() {
     const { id } = useParams();
     const [post, setPost] = useState({ results: [] });
-    const currentUser = useCurrentUser();
-    const profile_image = currentUser?.profile_image;
 
     useEffect(() => {
         const handleMount = async () => {
