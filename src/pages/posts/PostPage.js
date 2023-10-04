@@ -11,7 +11,6 @@ import appStyles from "../../App.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 // Axios imports
 import { axiosReq } from "../../api/axiosDefaults";
-import { axiosReq } from "../../api/axiosDefaults";
 // Component imports
 import Post from "./Post";
 import Comment from "../comments/Comment";
