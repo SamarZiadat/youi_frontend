@@ -1,11 +1,16 @@
+// React imports
 import React from "react";
+import { Link, useHistory } from "react-router-dom";
+// CSS imports
 import styles from "../../styles/Post.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
+// Bootstrap imports
 import { Card, Media, OverlayTrigger, Tooltip } from "react-bootstrap";
+// Component imports
 import Avatar from "../../components/Avatar";
-import { axiosRes } from "../../api/axiosDefaults";
 import { EditDeleteDropdown } from "../../components/EditDeleteDropdown";
-import { Link, useHistory } from "react-router-dom";
+// Axios imports
+import { axiosRes } from "../../api/axiosDefaults";
 
 const Post = (props) => {
     const {

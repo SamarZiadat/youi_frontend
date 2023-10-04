@@ -1,22 +1,25 @@
+// React imports
 import React, { useEffect, useState } from "react";
-
+import { useLocation } from "react-router";
+// Bootstrap imports
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
-
+// Component imports
 import Post from "./Post";
 import Asset from "../../components/Asset";
-
-import appStyles from "../../App.module.css";
-import styles from "../../styles/PostsPage.module.css";
-import { useLocation } from "react-router";
-import { axiosReq } from "../../api/axiosDefaults";
-
-import NoResults from "../../assets/no-results.png";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils.js";
+// CSS imports
+import appStyles from "../../App.module.css";
+import styles from "../../styles/PostsPage.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
+// Axios imports
+import { axiosReq } from "../../api/axiosDefaults";
+// Assets imports
+import NoResults from "../../assets/no-results.png";
+
 
 function PostsPage({ message, filter = "" }) {
     const [posts, setPosts] = useState({ results: [] });
