@@ -4,6 +4,7 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { Card, Media, OverlayTrigger, Tooltip } from "react-bootstrap";
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
+import { EditDeleteDropdown } from "../../components/EditDeleteDropdown";
 import { Link, useHistory } from "react-router-dom";
 
 const Post = (props) => {
@@ -82,7 +83,12 @@ const Post = (props) => {
                     </Link>
                     <div className="d-flex align-items-center">
                         <span>{updated_at}</span>
-                        {is_owner && postPage && "..."}
+                        {is_owner && postPage && (
+                            <EditDeleteDropdown
+                                handleEdit={handleEdit}
+                                handleDelete={handleDelete}
+                            />
+                        )}
                     </div>
                 </Media>
             </Card.Body>
