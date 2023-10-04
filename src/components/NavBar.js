@@ -7,7 +7,7 @@ import styles from "../styles/NavBar.module.css";
 import {
     useCurrentUser,
     useSetCurrentUser,
-} from "../contexts/CurrentUserContext";// React imports
+} from "../contexts/CurrentUserContext";
 // React imports
 import React from "react";
 import { NavLink } from "react-router-dom";

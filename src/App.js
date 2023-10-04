@@ -1,12 +1,17 @@
-import styles from "./App.module.css";
-import NavBar from "./components/NavBar";
-import Container from "react-bootstrap/Container";
+// React imports
 import { Route, Switch } from "react-router-dom";
-import "./api/axiosDefaults";
+import { createContext, useEffect, useState } from "react";
+// Component imports
 import SignUpForm from "./pages/auth/SignUpForm";
 import SignInForm from "./pages/auth/SignInForm";
-import { createContext, useEffect, useState } from "react";
+import NavBar from "./components/NavBar";
+//CSS imports
+import styles from "./App.module.css";
+// Bootstrap imports
+import Container from "react-bootstrap/Container";
+// Axios imports
 import axios from "axios";
+import "./api/axiosDefaults";
 
 export const CurrentUserContext = createContext();
 export const SetCurrentUserContext = createContext();
