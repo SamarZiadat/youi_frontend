@@ -17,6 +17,7 @@ import PostPage from "./pages/posts/PostPage";
 import PostsPage from "./pages/posts/PostsPage";
 import PostEditForm from "./pages/posts/PostEditForm";
 import EventCreateForm from "./pages/events/EventCreateForm";
+import EventPage from "./pages/events/EventPage";
 
 export const CurrentUserContext = createContext();
 export const SetCurrentUserContext = createContext();
@@ -68,6 +69,7 @@ function App() {
               <Route exact path="/posts/:id" render={() => <PostPage />} />
               <Route exact path="/posts/:id/edit" render={() => <PostEditForm />} />
               <Route exact path="/events/create" render={() => <EventCreateForm />} />
+              <Route exact path="/events/:id" render={() => <EventPage />} />
               <Route render={() => <p>Page not found!</p>} />
             </Switch>
           </Container>
