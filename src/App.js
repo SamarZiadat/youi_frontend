@@ -18,6 +18,7 @@ import PostsPage from "./pages/posts/PostsPage";
 import PostEditForm from "./pages/posts/PostEditForm";
 import EventCreateForm from "./pages/events/EventCreateForm";
 import EventPage from "./pages/events/EventPage";
+import EventsPage from "./pages/events/EventsPage";
 
 export const CurrentUserContext = createContext();
 export const SetCurrentUserContext = createContext();
@@ -46,29 +47,68 @@ function App() {
           <NavBar />
           <Container className={styles.Main}>
             <Switch>
-            <Route
-            exact
-            path="/"
-            render={() => (
-              <PostsPage message="No results found. Adjust the search wording." />
-            )}
-          />
-          <Route
-            exact
-            path="/postsfeed"
-            render={() => (
-              <PostsPage
-                message="No results found. Adjust the search keyword or follow a user."
-                filter={`owner__followed__owner__profile=${profile_id}&`}
+              <Route
+                exact
+                path="/"
+                render={() => (
+                  <PostsPage message="No results found. Adjust the search keyword/s." />
+                )}
               />
-            )}
-          />
+              <Route
+                exact
+                path="/postsfeed"
+                render={() => (
+                  <PostsPage
+                    message="No results found. Adjust the search keyword/s or follow a user."
+                    filter={`owner__followed__owner__profile=${profile_id}&`}
+                  />
+                )}
+              />
+              <Route
+                exact
+                path="/eventspage"
+                render={() => (
+                  <EventsPage message="No results found. Adjust the search keyword/s or category." />
+                )}
+              />
+              <Route
+                exact
+                path="/eventsfeed"
+                render={() => (
+                  <EventsPage
+                    message="No results found. Adjust the search keyword/s or category, or follow a user."
+                    filter={`owner__followed__owner__profile=${profile_id}&`}
+                  />
+                )}
+              />
+              <Route
+                exact
+                path="/bookmarked"
+                render={() => (
+                  <EventsPage
+                    message="No results found. Adjust the search keyword/s or category, or bookmark an event."
+                    filter={`bookmarks__owner__profile=${profile_id}&ordering=-bookmarks__created_at&`}
+                  />
+                )}
+              />
               <Route exact path="/signin" render={() => <SignInForm />} />
               <Route exact path="/signup" render={() => <SignUpForm />} />
-              <Route exact path="/posts/create" render={() => <PostCreateForm />} />
+              <Route
+                exact
+                path="/posts/create"
+                render={() => <PostCreateForm />}
+              />
               <Route exact path="/posts/:id" render={() => <PostPage />} />
-              <Route exact path="/posts/:id/edit" render={() => <PostEditForm />} />
-              <Route exact path="/events/create" render={() => <EventCreateForm />} />
+              <Route
+                exact
+                path="/posts/:id/edit"
+                render={() => <PostEditForm />}
+              />
+              <Route
+                exact
+                path="/events/create"
+                render={() => <EventCreateForm />}
+              />
               <Route exact path="/events/:id" render={() => <EventPage />} />
               <Route render={() => <p>Page not found!</p>} />
             </Switch>
