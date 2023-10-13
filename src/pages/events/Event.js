@@ -6,6 +6,7 @@ import { Link, useHistory } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
 import { EditDeleteDropdown } from "../../components/EditDeleteDropdown";
+import {Container, Row, Col} from 'react-bootstrap'
 
 const Event = (props) => {
     const {
@@ -95,15 +96,27 @@ const Event = (props) => {
                     </div>
                 </Media>
             </Card.Body>
+            <Card.Body>
+                {title && <Card.Text><b>{title}</b></Card.Text>}
+                {description && <Card.Text>{description}</Card.Text>}
+                <Container className="event-grid">
+                <Row>
+                <Col xs={6} md={4}>
+                {event_date && <Card.Text><i className="fa-regular fa-calendar-days"></i>{event_date}</Card.Text>}
+                </Col>
+                <Col xs={6} md={4}>
+                {category && <Card.Text className={styles.Category}><i className="fa-solid fa-users-line"></i>{category}</Card.Text>}
+                </Col>
+                <Col xs={6} md={4}>
+                {format && <Card.Text className={styles.Format}><i className="fa-solid fa-globe"></i>{format}</Card.Text>}
+                </Col>
+                </Row>
+                </Container>
+            </Card.Body>
             <Link to={`/events/${id}`}>
                 <Card.Img src={image} alt="Event image" />
             </Link>
             <Card.Body>
-                {title && <Card.Text>{title}</Card.Text>}
-                {description && <Card.Text>{description}</Card.Text>}
-                {event_date && <Card.Text><i className="fa-regular fa-calendar-days"></i>{event_date}</Card.Text>}
-                {category && <Card.Text className={styles.Category}><i className="fa-solid fa-users-line"></i>{category}</Card.Text>}
-                {format && <Card.Text className={styles.Format}><i className="fa-solid fa-globe"></i>{format}</Card.Text>}
                 {tags && <Card.Text className={styles.Tags}><i className="fa-solid fa-tag"></i>{tags}</Card.Text>}
                 <div className={styles.EventBar}>
                     {is_owner ? (
