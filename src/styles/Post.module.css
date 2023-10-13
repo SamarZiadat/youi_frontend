@@ -11,16 +11,16 @@ h5 {
     margin: 0 0;
 }
 
-.Heart {
-    color: #f85032;
+.Thumbsup{
+    color: #170312;
 }
 
-.Heart:hover {
+.Thumbsup:hover {
     color: #6A8E7F;
 }
 
-.HeartOutline:hover {
-    color: #f85032;
+.ThumbsupOutline:hover {
+    color: #170312;
 }
 
 .Tags {

@@ -1,12 +1,11 @@
 import React from "react";
 import styles from "../../styles/Event.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
-import { Card, Media, OverlayTrigger, Tooltip } from "react-bootstrap";
+import { Container, Row, Col, Card, Media, OverlayTrigger, Tooltip } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
 import { EditDeleteDropdown } from "../../components/EditDeleteDropdown";
-import {Container, Row, Col} from 'react-bootstrap'
 
 const Event = (props) => {
     const {
@@ -48,7 +47,7 @@ const Event = (props) => {
 
     const handleBookmark = async () => {
         try {
-            const { data } = await axiosRes.event("/bookmarks/", { event: id });
+            const { data } = await axiosRes.post("/bookmarks/", { event: id });
             setEvents((prevEvents) => ({
                 ...prevEvents,
                 results: prevEvents.results.map((event) => {
@@ -58,7 +57,7 @@ const Event = (props) => {
                 }),
             }));
         } catch (err) {
-            //console.log(err);
+           // console.log(err);
         }
     };
 
@@ -74,7 +73,7 @@ const Event = (props) => {
                 }),
             }));
         } catch (err) {
-            //console.log(err);
+           // console.log(err);
         }
     };
 
@@ -125,7 +124,7 @@ const Event = (props) => {
                             placement="top"
                             overlay={<Tooltip>You can't bookmark your own event!</Tooltip>}
                         >
-                            <i className="fa-solid fa-bookmark" />
+                            <i className="fa-regular fa-bookmark" />
                         </OverlayTrigger>
                     ) : bookmark_id ? (
                         <span onClick={handleUnbookmark}>
@@ -133,14 +132,14 @@ const Event = (props) => {
                         </span>
                     ) : currentUser ? (
                         <span onClick={handleBookmark}>
-                            <i className={`fa-solid fa-bookmark ${styles.BookmarkOutline}`} />
+                            <i className={`fa-regular fa-bookmark ${styles.BookmarkOutline}`} />
                         </span>
                     ) : (
                         <OverlayTrigger
                             placement="top"
                             overlay={<Tooltip>Log in to bookmark events!</Tooltip>}
                         >
-                            <i className="fa-solid fa-bookmark" />
+                            <i className="fa-regular fa-bookmark" />
                         </OverlayTrigger>
                     )}
                     {bookmarks_count}
