@@ -14,6 +14,7 @@ const Event = (props) => {
         owner,
         profile_id,
         profile_image,
+        reviews_count,
         bookmarks_count,
         bookmark_id,
         title,
@@ -146,6 +147,7 @@ const Event = (props) => {
                     <Link to={`/events/${id}`}>
                         <i className="fa-solid fa-ranking-star" />
                     </Link>
+                    {reviews_count}
                 </div>
             </Card.Body>
         </Card>
