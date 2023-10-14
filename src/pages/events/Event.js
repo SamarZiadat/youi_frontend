@@ -1,11 +1,16 @@
+// React imports
 import React from "react";
+import { Link, useHistory } from "react-router-dom";
+// CSS imports
 import styles from "../../styles/Event.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
+// Bootstrap imports
 import { Container, Row, Col, Card, Media, OverlayTrigger, Tooltip } from "react-bootstrap";
-import { Link, useHistory } from "react-router-dom";
+// Component imports
 import Avatar from "../../components/Avatar";
-import { axiosRes } from "../../api/axiosDefaults";
 import { EditDeleteDropdown } from "../../components/EditDeleteDropdown";
+// Axios imports
+import { axiosRes } from "../../api/axiosDefaults";
 
 const Event = (props) => {
     const {
