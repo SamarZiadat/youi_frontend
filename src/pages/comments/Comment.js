@@ -8,7 +8,7 @@ import Avatar from "../../components/Avatar";
 import {EditDeleteDropdown } from "../../components/EditDeleteDropdown";
 import CommentEditForm from "./CommentEditForm";
 // CSS imports
-import styles from "../../styles/Comment.module.css";
+import styles from "../../styles/CommentReview.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 // Axios imports
 import { axiosRes } from "../../api/axiosDefaults";
