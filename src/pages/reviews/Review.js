@@ -1,7 +1,11 @@
+// React imports
 import React from "react";
-import { Media } from "react-bootstrap";
 import { Link } from "react-router-dom";
+// Bootstrap imports
+import { Media } from "react-bootstrap";
+// Component imports
 import Avatar from "../../components/Avatar";
+// CSS imports
 import styles from "../../styles/CommentReview.module.css";
 
 const Review = (props) => {

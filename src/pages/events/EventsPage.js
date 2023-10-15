@@ -9,7 +9,7 @@ import Container from "react-bootstrap/Container";
 // Component imports
 import Event from "./Event";
 import Asset from "../../components/Asset";
-import NoResults from "../../assets/no-results.png";
+import NoResults from "../../assets/no-results.png"
 import InfiniteScroll from "react-infinite-scroll-component";
 import PopularProfiles from "../profiles/PopularProfiles";
 import { fetchMoreData } from "../../utils/utils.js";
