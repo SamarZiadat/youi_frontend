@@ -5,11 +5,37 @@ import { Link } from "react-router-dom";
 import { Media } from "react-bootstrap";
 // Component imports
 import Avatar from "../../components/Avatar";
+import { EditDeleteDropdown } from "../../components/EditDeleteDropdown";
 // CSS imports
 import styles from "../../styles/CommentReview.module.css";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
+// Axios imports
+import { axiosRes } from "../../api/axiosDefaults";
 
 const Review = (props) => {
-  const { profile_id, profile_image, owner, updated_at, review, rating } = props;
+  const { profile_id, profile_image, owner, updated_at, review, rating, id, setEvent, setReviews } = props;
+  
+  const currentUser = useCurrentUser();
+  const is_owner = currentUser?.username === owner;
+
+  const handleDelete = async () => {
+    try {
+        await axiosRes.delete(`/reviews/${id}/`);
+        setEvent((prevEvent) => ({
+            results: [
+                {
+                    ...prevEvent.results[0],
+                    reviews_count: prevEvent.results[0].reviews_count - 1,
+                },
+            ],
+        }));
+
+        setReviews((prevReviews) => ({
+            ...prevReviews,
+            results: prevReviews.results.filter((review) => review.id !== id),
+        }));
+    } catch (err) { }
+};
 
   return (
     <div>
@@ -24,6 +50,9 @@ const Review = (props) => {
           <p>{rating}</p>
           <p>{review}</p>
         </Media.Body>
+        {is_owner && (
+          <EditDeleteDropdown handleEdit={() => {}} handleDelete={handleDelete} />
+        )}
       </Media>
     </div>
   );
