@@ -24,7 +24,7 @@ function ReviewCreateForm(props) {
         setRating(rate.target.value);
     };
 
-    const handleSubmit = async (e, rate) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         try {
             const { data } = await axiosRes.post("/reviews/", {

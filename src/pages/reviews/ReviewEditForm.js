@@ -5,30 +5,36 @@ import { axiosRes } from "../../api/axiosDefaults";
 
 import styles from "../../styles/CommentReviewCreateEditForm.module.css";
 
-function CommentEditForm(props) {
-    const { id, review, rating, setShowEditForm, setComments } = props;
+function ReviewEditForm(props) {
+    const { id, review, rating, setShowEditForm, setReviews } = props;
 
-    const [formContent, setFormContent] = useState(review, rating);
+    const [formReview, setFormReview] = useState(review);
 
-    const handleChange = (event) => {
-        setFormContent(event.target.value);
+    const [formRating, setFormRating] = useState(rating);
+
+    const handleReviewChange = (event) => {
+        setFormReview(event.target.value);
+    };
+
+    const handleRatingChange = (rate) => {
+        setFormRating(rate.target.value);
     };
 
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
             await axiosRes.put(`/reviews/${id}/`, {
-                review: formContent.trim(),
-                rating: formContent.trim(),
+                review: formReview.trim(),
+                rating: formRating.trim(),
             });
-            setComments((prevComments) => ({
-                ...prevComments,
-                results: prevComments.results.map((review) => {
+            setReviews((prevReviews) => ({
+                ...prevReviews,
+                results: prevReviews.results.map((review) => {
                     return review.id === id
                         ? {
                             ...review,
-                            review: formContent.trim(),
-                            rating: formContent.trim(),
+                            review: formReview.trim(),
+                            rating: formRating.trim(),
                             updated_at: "now",
                         }
                         : review;
@@ -36,7 +42,7 @@ function CommentEditForm(props) {
             }));
             setShowEditForm(false);
         } catch (err) {
-            //console.log(err);
+            console.log(err);
         }
     };
 
@@ -46,10 +52,25 @@ function CommentEditForm(props) {
                 <Form.Control
                     className={styles.Form}
                     as="textarea"
-                    value={formContent}
-                    onChange={handleChange}
+                    value={formReview}
+                    onChange={handleReviewChange}
                     rows={2}
                 />
+            </Form.Group>
+            <Form.Group className="pr-1">
+                <Form.Control
+                    className={styles.Form}
+                    as="select"
+                    value={formRating}
+                    onChange={handleRatingChange}
+                    >
+                        <option value="5 stars">5 stars</option>
+                        <option value="4 stars">4 stars</option>
+                        <option value="3 stars">3 stars</option>
+                        <option value="2 stars">2 stars</option>
+                        <option value="1 star">1 star</option>
+                        <option value="0 stars">0 stars</option>
+                </Form.Control>
             </Form.Group>
             <div className="text-right">
                 <button
@@ -71,4 +92,4 @@ function CommentEditForm(props) {
     );
 }
 
-export default CommentEditForm;
+export default ReviewEditForm;
