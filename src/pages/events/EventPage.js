@@ -15,6 +15,9 @@ import Event from "./Event";
 import ReviewCreateForm from "../reviews/ReviewCreateForm";
 import PopularProfiles from "../profiles/PopularProfiles";
 import Review from "../reviews/Review";
+import InfiniteScroll from "react-infinite-scroll-component";
+import Asset from "../../components/Asset";
+import { fetchMoreData } from "../../utils/utils";
 
 function EventPage() {
   const { id } = useParams();
@@ -58,11 +61,20 @@ function EventPage() {
             "Reviews"
           ) : null}
           {reviews.results.length ? (
-            reviews.results.map(review => (
-              <Review key={review.id} {...review}
+            <InfiniteScroll
+            children={reviews.results.map((review) => (
+              <Review 
+              key={review.id}
+              {...review}
               setEvent={setEvent}
-              setReviews={setReviews}/>
-            ))
+              setReviews={setReviews}
+              />
+            ))}
+            dataLength={reviews.results.length}
+              loader={<Asset spinner />}
+              hasMore={!!reviews.next}
+              next={() => fetchMoreData(reviews, setReviews)}
+            />
           ) : currentUser ? (
             <span>No reviews yet, be the first to leave a review!</span>
           ) : (
