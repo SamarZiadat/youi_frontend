@@ -1,5 +1,8 @@
 // Bootstrap imports
-import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
+import Navbar from "react-bootstrap/Navbar";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import NavDropdown from "react-bootstrap/NavDropdown";
 // Component imports
 import logo from "../assets/logo.png";
 import { removeTokenTimestamp } from "../utils/utils";

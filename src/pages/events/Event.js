@@ -5,15 +5,13 @@ import { Link, useHistory } from "react-router-dom";
 import styles from "../../styles/Event.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 // Bootstrap imports
-import {
-  Container,
-  Row,
-  Col,
-  Card,
-  Media,
-  OverlayTrigger,
-  Tooltip,
-} from "react-bootstrap";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Card from "react-bootstrap/Card";
+import Media from "react-bootstrap/Media";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip";
 // Component imports
 import Avatar from "../../components/Avatar";
 import { EditDeleteDropdown } from "../../components/EditDeleteDropdown";

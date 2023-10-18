@@ -3,8 +3,6 @@ import PageNotFound from "../assets/not-found.png";
 import Asset from "./Asset";
 // CSS imports
 import styles from "../styles/NotFound.module.css";
-// React imports
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 const NotFound = () => {
   return (

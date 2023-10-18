@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 // Bootstrap imports
-import { Media } from "react-bootstrap";
+import Media from "react-bootstrap/Media";
 // Component imports
 import Avatar from "../../components/Avatar";
 import { EditDeleteDropdown } from "../../components/EditDeleteDropdown";
