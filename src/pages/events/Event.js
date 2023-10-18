@@ -106,13 +106,13 @@ const Event = (props) => {
                 {description && <Card.Text>{description}</Card.Text>}
                 <Container className="event-grid">
                 <Row>
-                <Col xs={6} md={4}>
+                <Col xs={12} md={4}>
                 {event_date && <Card.Text><i className="fa-regular fa-calendar-days"></i>{event_date}</Card.Text>}
                 </Col>
-                <Col xs={6} md={4}>
+                <Col xs={12} md={4}>
                 {category && <Card.Text className={styles.Category}><i className="fa-solid fa-users-line"></i>{category}</Card.Text>}
                 </Col>
-                <Col xs={6} md={4}>
+                <Col xs={12} md={4}>
                 {format && <Card.Text className={styles.Format}><i className="fa-solid fa-globe"></i>{format}</Card.Text>}
                 </Col>
                 </Row>

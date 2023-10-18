@@ -3,8 +3,9 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 // Bootstrap imports
 import Form from "react-bootstrap/Form";
-import InputGroup from "react-bootstrap/InputGroup";
 import Alert from "react-bootstrap/Alert";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
 // CSS imports
 import styles from "../../styles/CommentReviewCreateEditForm.module.css";
 // Component imports
@@ -60,27 +61,13 @@ function ReviewCreateForm(props) {
 
     return (
         <Form className="mt-2" onSubmit={handleSubmit}>
-            <Form.Group>
-                <InputGroup>
-                    <Link to={`/profiles/${profile_id}`}>
-                        <Avatar src={profileImage} />
-                    </Link>
-                    <Form.Label className="d-none">Review</Form.Label>
-                    <Form.Control
-                        className={styles.Form}
-                        placeholder="my review..."
-                        as="textarea"
-                        value={review}
-                        onChange={handleReviewChange}
-                        rows={2}
-                    />
-                </InputGroup>
-                </Form.Group>
-                {errors.review?.map((message, idx) => (
-                            <Alert key={idx} variant="warning">
-                                {message}
-                            </Alert>
-                        ))}
+            <Row>
+            <Col md="1" lg="1">
+                <Link to={`/profiles/${profile_id}`}>
+                    <Avatar src={profileImage} />
+                </Link>
+            </Col>
+            <Col xs="auto" md="4" lg="4">
                 <Form.Group>
                 <Form.Label className="d-none">Rating</Form.Label>
                     <Form.Control
@@ -107,6 +94,26 @@ function ReviewCreateForm(props) {
                                 {message}
                             </Alert>
                         ))}
+            </Col>
+            <Col md="7" lg="7">
+            <Form.Group>
+                    <Form.Label className="d-none">Review</Form.Label>
+                    <Form.Control
+                        className={styles.Form}
+                        placeholder="My review..."
+                        as="textarea"
+                        value={review}
+                        onChange={handleReviewChange}
+                        rows={1}
+                    />
+                </Form.Group>
+                {errors.review?.map((message, idx) => (
+                            <Alert key={idx} variant="warning">
+                                {message}
+                            </Alert>
+                        ))}
+                </Col>
+            </Row>
             <button
                 className={`${styles.Button} btn d-block ml-auto`}
                 disabled={!review.trim()}

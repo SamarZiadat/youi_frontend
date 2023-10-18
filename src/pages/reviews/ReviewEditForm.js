@@ -1,8 +1,12 @@
+// React imports
 import React, { useState } from "react";
-
+// Bootstrap imports
 import Form from "react-bootstrap/Form";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
+// Axios imports
 import { axiosRes } from "../../api/axiosDefaults";
-
+// CSS imports
 import styles from "../../styles/CommentReviewCreateEditForm.module.css";
 
 function ReviewEditForm(props) {
@@ -48,15 +52,8 @@ function ReviewEditForm(props) {
 
     return (
         <Form onSubmit={handleSubmit}>
-            <Form.Group className="pr-1">
-                <Form.Control
-                    className={styles.Form}
-                    as="textarea"
-                    value={formReview}
-                    onChange={handleReviewChange}
-                    rows={2}
-                />
-            </Form.Group>
+            <Row>
+            <Col xs lg="3">
             <Form.Group className="pr-1">
                 <Form.Control
                     className={styles.Form}
@@ -72,6 +69,19 @@ function ReviewEditForm(props) {
                         <option value="0 stars">0 stars</option>
                 </Form.Control>
             </Form.Group>
+            </Col>
+            <Col xs lg="9">
+            <Form.Group className="pr-1">
+                <Form.Control
+                    className={styles.Form}
+                    as="textarea"
+                    value={formReview}
+                    onChange={handleReviewChange}
+                    rows={1}
+                />
+            </Form.Group>
+            </Col>
+            </Row>
             <div className="text-right">
                 <button
                     className={styles.Button}
