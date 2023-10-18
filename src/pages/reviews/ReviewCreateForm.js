@@ -49,13 +49,13 @@ function ReviewCreateForm(props) {
       }));
       setReview("");
       setRating("");
-      console.log(setRating);
+      //console.log(setRating);
     } catch (err) {
       if (err.response?.status !== 401) {
         setErrors({ detail: err.response?.data.detail });
-        console.log(err.response);
+        //console.log(err.response);
       }
-      console.log(errors);
+      //console.log(errors);
     }
   };
 

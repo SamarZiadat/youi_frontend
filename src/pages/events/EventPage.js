@@ -36,7 +36,7 @@ function EventPage() {
         setEvent({ results: [event] });
         setReviews(reviews);
       } catch (err) {
-        console.log(err);
+        //console.log(err);
       }
     };
 
