@@ -2,6 +2,7 @@
 import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
 // Component imports
 import logo from "../assets/logo.png";
+import { removeTokenTimestamp } from "../utils/utils";
 // CSS imports
 import styles from "../styles/NavBar.module.css";
 import {
@@ -28,6 +29,7 @@ const NavBar = () => {
         try {
             await axios.post("dj-rest-auth/logout/");
             setCurrentUser(null);
+            removeTokenTimestamp();
         } catch (err) {
             //console.log(err);
         }
