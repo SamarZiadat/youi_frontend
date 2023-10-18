@@ -36,20 +36,22 @@ const NavBar = () => {
 
   const addIcons = (
     <>
-      <NavLink
-        className={styles.AddIconLink}
-        activeClassName={styles.Active}
-        to="/posts/create"
-      >
-        <i className="far fa-plus-square"></i>Add post
-      </NavLink>
-      <NavLink
-        className={styles.AddIconLink}
-        activeClassName={styles.Active}
-        to="/events/create"
-      >
-        <i className="fa-regular fa-calendar-plus"></i>Add event
-      </NavLink>
+      <div>
+        <NavLink
+          className={styles.AddIconLink}
+          activeClassName={styles.Active}
+          to="/posts/create"
+        >
+          <i className="far fa-plus-square"></i>Add post
+        </NavLink>
+        <NavLink
+          className={styles.AddIconLink}
+          activeClassName={styles.Active}
+          to="/events/create"
+        >
+          <i className="fa-regular fa-calendar-plus"></i>Add event
+        </NavLink>
+      </div>
     </>
   );
   const loggedInIcons = (
