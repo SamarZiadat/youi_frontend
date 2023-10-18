@@ -114,9 +114,17 @@ function App() {
                 path="/events/create"
                 render={() => <EventCreateForm />}
               />
-              <Route exact path="/events/:id/edit" render={() => <EventEditForm />} />
+              <Route
+                exact
+                path="/events/:id/edit"
+                render={() => <EventEditForm />}
+              />
               <Route exact path="/events/:id" render={() => <EventPage />} />
-              <Route exact path="/profiles/:id" render={() => <ProfilePage />} />
+              <Route
+                exact
+                path="/profiles/:id"
+                render={() => <ProfilePage />}
+              />
               <Route
                 exact
                 path="/profiles/:id/edit/username"

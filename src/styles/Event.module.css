@@ -1,35 +1,35 @@
 .Event {
-    background-color: #ffffff;
-    border: 1px solid #dadadf;
-    border-radius: 2px;
-    margin-bottom: 16px;
-    text-align: center;
+  background-color: #ffffff;
+  border: 1px solid #dadadf;
+  border-radius: 2px;
+  margin-bottom: 16px;
+  text-align: center;
 }
 
 .Event figure,
 h5 {
-    margin: 0 0;
+  margin: 0 0;
 }
 
 .Bookmark {
-    color: #170312;
+  color: #170312;
 }
 
 .Bookmark:hover {
-    color: #2142b2;
+  color: #2142b2;
 }
 
 .BookmarkOutline:hover {
-    color: #170312;
+  color: #170312;
 }
 
 .Tags {
-    font-weight: bold;
-    color: #6A8E7F;
+  font-weight: bold;
+  color: #6a8e7f;
 }
 
 .Description {
-    padding-right: 16px;
-    padding-left: 16px;
-    text-align: left;
+  padding-right: 16px;
+  padding-left: 16px;
+  text-align: left;
 }

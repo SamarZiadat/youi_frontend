@@ -1,35 +1,35 @@
 .Post {
-    background-color: #ffffff;
-    border: 1px solid #dadadf;
-    border-radius: 2px;
-    margin-bottom: 16px;
-    text-align: center;
+  background-color: #ffffff;
+  border: 1px solid #dadadf;
+  border-radius: 2px;
+  margin-bottom: 16px;
+  text-align: center;
 }
 
 .Post figure,
 h5 {
-    margin: 0 0;
+  margin: 0 0;
 }
 
-.Thumbsup{
-    color: #170312;
+.Thumbsup {
+  color: #170312;
 }
 
 .Thumbsup:hover {
-    color: #6A8E7F;
+  color: #6a8e7f;
 }
 
 .ThumbsupOutline:hover {
-    color: #170312;
+  color: #170312;
 }
 
 .Tags {
-    font-weight: bold;
-    color: #6A8E7F;
+  font-weight: bold;
+  color: #6a8e7f;
 }
 
 .Content {
-    padding-right: 35px;
-    padding-left: 35px;
-    text-align: left;
+  padding-right: 35px;
+  padding-left: 35px;
+  text-align: left;
 }

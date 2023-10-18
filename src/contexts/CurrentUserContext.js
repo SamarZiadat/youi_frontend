@@ -1,11 +1,11 @@
-// React imports 
+// React imports
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
 import { useHistory } from "react-router";
 // Axios imports
 import axios from "axios";
 import { axiosReq, axiosRes } from "../api/axiosDefaults";
 // Component imports
-import { removeTokenTimestamp } from "../utils/utils";
+import { removeTokenTimestamp, shouldRefreshToken } from "../utils/utils";
 
 export const CurrentUserContext = createContext();
 export const SetCurrentUserContext = createContext();

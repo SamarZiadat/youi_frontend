@@ -14,30 +14,40 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { axiosRes } from "../../api/axiosDefaults";
 
 const Review = (props) => {
-  const { profile_id, profile_image, owner, updated_at, review, rating, id, setEvent, setReviews } = props;
-  
+  const {
+    profile_id,
+    profile_image,
+    owner,
+    updated_at,
+    review,
+    rating,
+    id,
+    setEvent,
+    setReviews,
+  } = props;
+
   const [showEditForm, setShowEditForm] = useState(false);
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
 
   const handleDelete = async () => {
     try {
-        await axiosRes.delete(`/reviews/${id}/`);
-        setEvent((prevEvent) => ({
-            results: [
-                {
-                    ...prevEvent.results[0],
-                    reviews_count: prevEvent.results[0].reviews_count - 1,
-                },
-            ],
-        }));
+      await axiosRes.delete(`/reviews/${id}/`);
+      setEvent((prevEvent) => ({
+        results: [
+          {
+            ...prevEvent.results[0],
+            reviews_count: prevEvent.results[0].reviews_count - 1,
+          },
+        ],
+      }));
 
-        setReviews((prevReviews) => ({
-            ...prevReviews,
-            results: prevReviews.results.filter((review) => review.id !== id),
-        }));
-    } catch (err) { }
-};
+      setReviews((prevReviews) => ({
+        ...prevReviews,
+        results: prevReviews.results.filter((review) => review.id !== id),
+      }));
+    } catch (err) {}
+  };
 
   return (
     <>
@@ -51,16 +61,20 @@ const Review = (props) => {
           <span className={styles.Date}>{updated_at}</span>
           {showEditForm ? (
             <ReviewEditForm
-            id={id}
-            profile_id={profile_id}
-            review={review}
-            rating={rating}
-            profileImage={profile_image}
-            setReviews={setReviews}
-            setShowEditForm={setShowEditForm}
-          />
+              id={id}
+              profile_id={profile_id}
+              review={review}
+              rating={rating}
+              profileImage={profile_image}
+              setReviews={setReviews}
+              setShowEditForm={setShowEditForm}
+            />
           ) : (
-          <p>{rating}<br/>{review}</p>
+            <p>
+              {rating}
+              <br />
+              {review}
+            </p>
           )}
         </Media.Body>
         {is_owner && !showEditForm && (

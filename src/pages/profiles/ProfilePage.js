@@ -28,7 +28,6 @@ import { fetchMoreData } from "../../utils/utils";
 import NoResults from "../../assets/no-results.png";
 import { ProfileEditDropdown } from "../../components/EditDeleteDropdown";
 
-
 function ProfilePage() {
   const [hasLoaded, setHasLoaded] = useState(false);
   const [profilePosts, setProfilePosts] = useState({ results: [] });
@@ -37,21 +36,24 @@ function ProfilePage() {
   const currentUser = useCurrentUser();
   const { id } = useParams();
 
-  const {setProfileData, handleFollow, handleUnfollow} = useSetProfileData();
+  const { setProfileData, handleFollow, handleUnfollow } = useSetProfileData();
   const { pageProfile } = useProfileData();
 
   const [profile] = pageProfile.results;
   const is_owner = currentUser?.username === profile?.owner;
-  console.log(profile)
+  console.log(profile);
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const [{ data: pageProfile }, { data: profilePosts },{ data: profileEvents }] =
-          await Promise.all([
-            axiosReq.get(`/profiles/${id}/`),
-            axiosReq.get(`/posts/?owner__profile=${id}`),
-            axiosReq.get(`/events/?owner__profile=${id}`),
-          ]);
+        const [
+          { data: pageProfile },
+          { data: profilePosts },
+          { data: profileEvents },
+        ] = await Promise.all([
+          axiosReq.get(`/profiles/${id}/`),
+          axiosReq.get(`/posts/?owner__profile=${id}`),
+          axiosReq.get(`/events/?owner__profile=${id}`),
+        ]);
         setProfileData((prevState) => ({
           ...prevState,
           pageProfile: { results: [pageProfile] },
@@ -68,7 +70,7 @@ function ProfilePage() {
 
   const mainProfile = (
     <>
-    {profile?.is_owner && <ProfileEditDropdown id={profile?.id} />}
+      {profile?.is_owner && <ProfileEditDropdown id={profile?.id} />}
       <Row noGutters className="px-3 text-center">
         <Col lg={3} className="text-lg-left">
           <Image
@@ -79,8 +81,13 @@ function ProfilePage() {
         </Col>
         <Col lg={6}>
           <h3 className="m-2">{profile?.owner}</h3>
-          <p className="m-2">{profile?.job_title}, {profile?.current_employer}</p>
-          <p className="m-2"><i className="fa-solid fa-location-dot"></i>{profile?.location}</p>
+          <p className="m-2">
+            {profile?.job_title}, {profile?.current_employer}
+          </p>
+          <p className="m-2">
+            <i className="fa-solid fa-location-dot"></i>
+            {profile?.location}
+          </p>
           <Row className="justify-content-center no-gutters">
             <Col xs={3} className="my-2">
               <div>{profile?.posts_count}</div>
@@ -169,15 +176,15 @@ function ProfilePage() {
   const profileTabs = (
     <>
       <Tabs defaultActiveKey="posts" id="profile-tab">
-    <Tab eventKey="posts" title={`${profile?.owner}'s posts`}>
-    {mainProfilePosts}
-    </Tab>
-    <Tab eventKey="events" title={`${profile?.owner}'s events`}>
-    {mainProfileEvents}
-    </Tab>
+        <Tab eventKey="posts" title={`${profile?.owner}'s posts`}>
+          {mainProfilePosts}
+        </Tab>
+        <Tab eventKey="events" title={`${profile?.owner}'s events`}>
+          {mainProfileEvents}
+        </Tab>
       </Tabs>
     </>
-  )
+  );
 
   return (
     <Row>

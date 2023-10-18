@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { Media } from "react-bootstrap";
 // Components imports
 import Avatar from "../../components/Avatar";
-import {EditDeleteDropdown } from "../../components/EditDeleteDropdown";
+import { EditDeleteDropdown } from "../../components/EditDeleteDropdown";
 import CommentEditForm from "./CommentEditForm";
 // CSS imports
 import styles from "../../styles/CommentReview.module.css";

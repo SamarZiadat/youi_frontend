@@ -32,7 +32,8 @@ const ProfileEditForm = () => {
     about: "",
     profile_picture: "",
   });
-  const { location, job_title, current_employer, about, profile_picture } = profileData;
+  const { location, job_title, current_employer, about, profile_picture } =
+    profileData;
 
   const [errors, setErrors] = useState({});
 
@@ -41,8 +42,20 @@ const ProfileEditForm = () => {
       if (currentUser?.profile_id?.toString() === id) {
         try {
           const { data } = await axiosReq.get(`/profiles/${id}/`);
-          const { location, job_title, current_employer, about, profile_picture } = data;
-          setProfileData({ location, job_title, current_employer, about, profile_picture });
+          const {
+            location,
+            job_title,
+            current_employer,
+            about,
+            profile_picture,
+          } = data;
+          setProfileData({
+            location,
+            job_title,
+            current_employer,
+            about,
+            profile_picture,
+          });
         } catch (err) {
           console.log(err);
           history.push("/");
@@ -106,7 +119,7 @@ const ProfileEditForm = () => {
         </Alert>
       ))}
 
-        <Form.Group>
+      <Form.Group>
         <Form.Label>Current employer</Form.Label>
         <Form.Control
           as="textarea"
@@ -123,7 +136,7 @@ const ProfileEditForm = () => {
         </Alert>
       ))}
 
-        <Form.Group>
+      <Form.Group>
         <Form.Label>Location</Form.Label>
         <Form.Control
           as="textarea"
@@ -140,7 +153,7 @@ const ProfileEditForm = () => {
         </Alert>
       ))}
 
-        <Form.Group>
+      <Form.Group>
         <Form.Label>About</Form.Label>
         <Form.Control
           as="textarea"
