@@ -26,11 +26,13 @@ const ProfileEditForm = () => {
   const imageFile = useRef();
 
   const [profileData, setProfileData] = useState({
-    name: "",
-    content: "",
-    image: "",
+    location: "",
+    job_title: "",
+    current_employer: "",
+    about: "",
+    profile_picture: "",
   });
-  const { name, content, image } = profileData;
+  const { location, job_title, current_employer, about, profile_picture } = profileData;
 
   const [errors, setErrors] = useState({});
 
@@ -39,8 +41,8 @@ const ProfileEditForm = () => {
       if (currentUser?.profile_id?.toString() === id) {
         try {
           const { data } = await axiosReq.get(`/profiles/${id}/`);
-          const { name, content, image } = data;
-          setProfileData({ name, content, image });
+          const { location, job_title, current_employer, about, profile_picture } = data;
+          setProfileData({ location, job_title, current_employer, about, profile_picture });
         } catch (err) {
           console.log(err);
           history.push("/");
@@ -63,11 +65,13 @@ const ProfileEditForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
-    formData.append("name", name);
-    formData.append("content", content);
+    formData.append("location", location);
+    formData.append("job_title", job_title);
+    formData.append("current_employer", current_employer);
+    formData.append("about", about);
 
     if (imageFile?.current?.files[0]) {
-      formData.append("image", imageFile?.current?.files[0]);
+      formData.append("profile_picture", imageFile?.current?.files[0]);
     }
 
     try {
@@ -86,21 +90,73 @@ const ProfileEditForm = () => {
   const textFields = (
     <>
       <Form.Group>
-        <Form.Label>Bio</Form.Label>
+        <Form.Label>Job title</Form.Label>
         <Form.Control
           as="textarea"
-          value={content}
+          value={job_title}
           onChange={handleChange}
-          name="content"
-          rows={7}
+          name="job_title"
+          rows={1}
         />
       </Form.Group>
 
-      {errors?.content?.map((message, idx) => (
+      {errors?.job_title?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
           {message}
         </Alert>
       ))}
+
+        <Form.Group>
+        <Form.Label>Current employer</Form.Label>
+        <Form.Control
+          as="textarea"
+          value={current_employer}
+          onChange={handleChange}
+          name="current_employer"
+          rows={1}
+        />
+      </Form.Group>
+
+      {errors?.current_employer?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+
+        <Form.Group>
+        <Form.Label>Location</Form.Label>
+        <Form.Control
+          as="textarea"
+          value={location}
+          onChange={handleChange}
+          name="location"
+          rows={1}
+        />
+      </Form.Group>
+
+      {errors?.location?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+
+        <Form.Group>
+        <Form.Label>About</Form.Label>
+        <Form.Control
+          as="textarea"
+          value={about}
+          onChange={handleChange}
+          name="about"
+          rows={7}
+        />
+      </Form.Group>
+
+      {errors?.about?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+
       <Button
         className={`${btnStyles.Button} ${btnStyles.Blue}`}
         onClick={() => history.goBack()}
@@ -119,12 +175,12 @@ const ProfileEditForm = () => {
         <Col className="py-2 p-0 p-md-2 text-center" md={7} lg={6}>
           <Container className={appStyles.Content}>
             <Form.Group>
-              {image && (
+              {profile_picture && (
                 <figure>
-                  <Image src={image} fluid />
+                  <Image src={profile_picture} fluid />
                 </figure>
               )}
-              {errors?.image?.map((message, idx) => (
+              {errors?.profile_picture?.map((message, idx) => (
                 <Alert variant="warning" key={idx}>
                   {message}
                 </Alert>
@@ -145,7 +201,7 @@ const ProfileEditForm = () => {
                   if (e.target.files.length) {
                     setProfileData({
                       ...profileData,
-                      image: URL.createObjectURL(e.target.files[0]),
+                      profile_picture: URL.createObjectURL(e.target.files[0]),
                     });
                   }
                 }}

@@ -106,7 +106,7 @@ function ProfilePage() {
             (profile?.following_id ? (
               <Button
                 className={`${btnStyles.Button} ${btnStyles.BlackOutline}`}
-                onClick={() => handleFollow(profile)}
+                onClick={() => handleUnfollow(profile)}
               >
                 unfollow
               </Button>
