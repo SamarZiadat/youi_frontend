@@ -71,11 +71,13 @@ function ProfilePage() {
           <Image
             className={styles.ProfileImage}
             roundedCircle
-            src={profile?.image}
+            src={profile?.profile_picture}
           />
         </Col>
         <Col lg={6}>
           <h3 className="m-2">{profile?.owner}</h3>
+          <p className="m-2">{profile?.job_title}, {profile?.current_employer}</p>
+          <p className="m-2"><i className="fa-solid fa-location-dot"></i>{profile?.location}</p>
           <Row className="justify-content-center no-gutters">
             <Col xs={3} className="my-2">
               <div>{profile?.posts_count}</div>
