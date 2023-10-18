@@ -97,11 +97,11 @@ const Post = (props) => {
                     </div>
                 </Media>
             </Card.Body>
+            {content && <Card.Text className={styles.Content}>{content}</Card.Text>}
             <Link to={`/posts/${id}`}>
                 <Card.Img src={image} alt={content} />
             </Link>
             <Card.Body>
-                {content && <Card.Text>{content}</Card.Text>}
                 {tags && <Card.Text className={styles.Tags}><i className="fa-solid fa-tag"></i>{tags}</Card.Text>}
                 <div className={styles.PostBar}>
                     {is_owner ? (

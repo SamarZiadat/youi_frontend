@@ -27,3 +27,9 @@ h5 {
     font-weight: bold;
     color: #6A8E7F;
 }
+
+.Description {
+    padding-right: 16px;
+    padding-left: 16px;
+    text-align: left;
+}

@@ -36,14 +36,14 @@ const NavBar = () => {
     const addIcons = (
         <>
             <NavLink
-                className={styles.NavLink}
+                className={styles.AddIconLink}
                 activeClassName={styles.Active}
                 to="/posts/create"
             >
                 <i className="far fa-plus-square"></i>Add post
             </NavLink>
             <NavLink
-                className={styles.NavLink}
+                className={styles.AddIconLink}
                 activeClassName={styles.Active}
                 to="/events/create"
             >

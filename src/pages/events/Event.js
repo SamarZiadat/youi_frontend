@@ -103,7 +103,7 @@ const Event = (props) => {
             </Card.Body>
             <Card.Body>
                 {title && <Card.Text><b>{title}</b></Card.Text>}
-                {description && <Card.Text>{description}</Card.Text>}
+                {description && <Card.Text className={styles.Description}>{description}</Card.Text>}
                 <Container className="event-grid">
                 <Row>
                 <Col xs={12} md={4}>
