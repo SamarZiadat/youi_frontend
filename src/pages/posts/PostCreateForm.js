@@ -11,6 +11,7 @@ import Alert from "react-bootstrap/Alert";
 import Image from "react-bootstrap/Image";
 // Component imports
 import Asset from "../../components/Asset";
+import { useRedirect } from "../../hooks/useRedirect";
 // Asset imports
 import Upload from "../../assets/upload.png";
 // CSS imports
@@ -21,6 +22,7 @@ import btnStyles from "../../styles/Button.module.css";
 import { axiosReq } from "../../api/axiosDefaults";
 
 function PostCreateForm() {
+    useRedirect("loggedOut");
     const [errors, setErrors] = useState({});
 
     const [postData, setPostData] = useState({

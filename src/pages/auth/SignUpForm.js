@@ -5,6 +5,8 @@ import { Link, useHistory } from "react-router-dom";
 import styles from "../../styles/SignInUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
+// Component imports
+import { useRedirect } from "../../hooks/useRedirect";
 
 import {
     Form,
@@ -18,6 +20,7 @@ import {
 import axios from "axios";
 
 const SignUpForm = () => {
+    useRedirect("loggedIn");
     const [signUpData, setSignUpData] = useState({
         username: "",
         password1: "",
