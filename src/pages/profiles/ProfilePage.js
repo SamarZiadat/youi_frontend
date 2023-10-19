@@ -128,7 +128,7 @@ function ProfilePage() {
               </Button>
             ))}
         </Col>
-        {profile?.content && <Col className="p-3">{profile.content}</Col>}
+        <p className={styles.About}>{profile?.about}</p>
       </Row>
     </>
   );
