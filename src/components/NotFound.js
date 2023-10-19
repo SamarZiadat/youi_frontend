@@ -8,7 +8,7 @@ const NotFound = () => {
   return (
     <>
       <div className={`${styles.NotFound} mt-3 text-center`}>
-        <p>404: Page not found</p>
+        <Link to={"/"}>404 Error. Click here to return to the Homepage</Link>
         <Asset src={PageNotFound} />
       </div>
     </>
