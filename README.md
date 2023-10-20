@@ -228,6 +228,10 @@ When the user is logged out, the following menu items are visible:
 -   Discover - This is the first menu item and it is a dropdown menu, allowing users to view and discover either all posts or all events made by users on the website
 - Authentication: Sign In and Sign Up icons are available and link to the respective forms
 
+![enter image description here](https://res.cloudinary.com/ddsrnz9la/image/upload/v1697821128/Screenshot_2023-10-20_at_17.30.33_ea6795.png)
+
+![enter image description here](https://res.cloudinary.com/ddsrnz9la/image/upload/v1697821128/Screenshot_2023-10-20_at_17.30.54_lxritw.png)
+
 When the user is logged in, additional links become available to select:
 
 -   Feed - Logged in users can use this dropdown menu to access the feed page for posts and for events - where they can see events and posts of other profiles they follow.
@@ -235,11 +239,19 @@ When the user is logged in, additional links become available to select:
 -   Authentication - Authentication icons change so that there is now no longer Sign In and Sign Up icons, and now instead display a link to the user's own profile page and a link to Sign Out of the site.
 - Add Event and Add Post - Logged in users can access links to create events and posts 
 
+![enter image description here](https://res.cloudinary.com/ddsrnz9la/image/upload/v1697821128/Screenshot_2023-10-20_at_17.31.31_tgrzgp.png)
+
+![enter image description here](https://res.cloudinary.com/ddsrnz9la/image/upload/v1697821128/Screenshot_2023-10-20_at_17.31.46_qde468.png)
+
 ### Authentication
 
 Users who have no created an account can click on the Sign Up link on the Navigation Bar to create a user account. I have used the standard dj-rest/auth/registration user account signup process for this.
 
+![enter image description here](https://res.cloudinary.com/ddsrnz9la/image/upload/v1697821128/Screenshot_2023-10-20_at_17.34.14_jfkkvm.png)
+
 If a user has a you.i user account, they can click on the Sign In menu option in the Navigation Bar to sign into their account.
+
+![enter image description here](https://res.cloudinary.com/ddsrnz9la/image/upload/v1697821128/Screenshot_2023-10-20_at_17.34.01_qldvol.png)
 
 To sign out, already signed in users can access the Sign Out option in the Navigation Bar.
 
@@ -255,15 +267,23 @@ There are three main react components which make up the Posts Page, which is als
 
 The popular profiles component is a feature across the entire website that appears at the right of all pages on large screens and at the top of all pages on smaller screens. This component uses a filter to order all site users by followers count from highest to lowest. The top ten profiles are displayed on larger screens, and the top 4 on smaller screens.
 
+![enter image description here](https://res.cloudinary.com/ddsrnz9la/image/upload/v1697821128/Screenshot_2023-10-20_at_17.35.56_d9ui5c.png)
+
 If the user isn't logged in, they can see the profile avatar and the username, and if the user is logged in, they will also see a button enabling them to follow or unfollow the profile. Each profile avatar can also be clicked on to view the full profile page of that user.
+
+![enter image description here](https://res.cloudinary.com/ddsrnz9la/image/upload/v1697821128/Screenshot_2023-10-20_at_17.36.34_sprmqp.png)
 
 - ### Post
 All posts that are created by users on the you.i platform are displayed on the Posts Page / Homepage. All posts created are requested from the API and they are ordered by creation date with the most recent posts at the top, organised in descending order.
+
+![enter image description here](https://res.cloudinary.com/ddsrnz9la/image/upload/v1697821130/Screenshot_2023-10-20_at_17.41.23_qszh71.png)
 
 Each post displays the user who created it, the date it was created, the written content, an image and the tags. A count of how many users like the post and how many have commented on the post is visible too. By clicking on the post image or the comments count, the user is taken to the post's individual page.
 
 - ### Search
 If the user wants to search for specific posts can achieve this by using the search bar. Users can search all the posts by the username who posted it, the written content of the post, and the post tags. 
+
+![enter image description here](https://res.cloudinary.com/ddsrnz9la/image/upload/v1697821131/Screenshot_2023-10-20_at_17.45.21_v99vwp.png)
 
 ### Events Page
 
@@ -276,6 +296,8 @@ The Posts Page can be accessed through the 'Discover' dropdown on the Navigation
 - ### Event
 All events that are created by users on the you.i platform are displayed on the Events Page. All events created are requested from the API and they are ordered by creation date with the most recently created events at the top, organised in descending order.
 
+![enter image description here](https://res.cloudinary.com/ddsrnz9la/image/upload/v1697821129/Screenshot_2023-10-20_at_17.40.36_zu69he.png)
+
 Each event displays the user who created it, the date it was created, the event title, event description, event date, event category, event format, event image, and the tags. A count of how many users bookmarked the event and how many have reviewed the event is visible too. By clicking on the event image or the review count, the user is taken to the event's individual page.
 
 - ### Search and Filter
@@ -284,9 +306,13 @@ If the user wants to search for specific events they have two ways to achieve th
 
 2.  All events are assigned a category on creation, and so the events list can be filtered by these categories to show only the events in one category selected by the user from the dropdown options.
 
+![enter image description here](https://res.cloudinary.com/ddsrnz9la/image/upload/v1697821131/Screenshot_2023-10-20_at_17.45.08_anvqug.png)
+
 ### Feed
     
 The feed pages can be accessed via the 'Feed' dropdown in the Navigation Bar. The Posts Feed and Events Feed pages look identical to their corresponding Posts Page and Events Page counterparts - the only difference is the filtering of the Event and Post components. On the feed paged all the Posts or Events are requested from the API, but a filter is used to only show Posts or Events posted by profiles that the currently logged in user is following. For this reason, this page is not visible if the user is not logged in. If the user isn't following any other profiles, a 'No Results found' message will appear instead.
+
+![enter image description here](https://res.cloudinary.com/ddsrnz9la/image/upload/v1697821132/Screenshot_2023-10-20_at_17.46.59_oyonlv.png)
 
 ### Bookmarks Page
 
@@ -296,15 +322,23 @@ The Bookmarks Page looks identical to the Events Page, with te only difference b
     
 If as user is logged in, they can create new posts that will be published on the Posts Page. By clicking on the Add Post menu option in the Navigation Bar, users are taken to the Create Post form, where they can submit the post creation form to the API. All fields are mandatory and an image must be uploaded for the post to be submitted successfully. Once the form has been submitted successfully, you can see the published post as you are re-directed automatically to the newly created post page. In addition, every time a user creates a new post, their posts count goes up on their profile page stats for other users to see how active they are on the platform.
 
+![enter image description here](https://res.cloudinary.com/ddsrnz9la/image/upload/v1697821133/Screenshot_2023-10-20_at_17.48.27_oztbps.png)
+
 ### Create an Event
     
 If as user is logged in, they can create new events that will be published on the Events Page. By clicking on the Add Event menu option in the Navigation Bar, users are taken to the Create Event form, where they can submit the event creation form to the API. All fields are mandatory and an image must be uploaded for the event to be submitted successfully. Once the form has been submitted successfully, you can see the published event as you are re-directed automatically to the newly created event page. In addition, every time a user creates a new event, their events count goes up on their profile page stats for other users to see how active they are as an event host.
 
+![enter image description here](https://res.cloudinary.com/ddsrnz9la/image/upload/v1697821132/Screenshot_2023-10-20_at_17.48.17_ybzhgy.png)
+
 ### Post Page
 
-The Post Page is a page that display all the post details and comments for one specific event. Users can reach this page by clicking on the post image or comment icon on any post on the Posts Page or Posts Feed page. If the user is the owner of the  post, they are also given the option to edit or delete this post by clicking on the three dots that appear next to the post creation date.
+The Post Page is a page that display all the post details and comments for one specific post. Users can reach this page by clicking on the post image or comment icon on any post on the Posts Page or Posts Feed page. If the user is the owner of the  post, they are also given the option to edit or delete this post by clicking on the three dots that appear next to the post creation date.
+
+![enter image description here](https://res.cloudinary.com/ddsrnz9la/image/upload/v1697821130/Screenshot_2023-10-20_at_17.41.41_tjkzhd.png)
 
 If the user selects the Delete option, the post is deleted from the API and is no longer visible on the website, and the user is redirected to Post Create form where they can choose to create a new post. If the user selects the Edit option, they are taken to the Post Edit Form, which has the same fields as the Create Post form, but the fields are already pre-populated with the existing post information. The user can edit the information in the fields and save the changes, which will redirect them to the Post Page where they can see that the post has been updated successfully.
+
+![enter image description here](https://res.cloudinary.com/ddsrnz9la/image/upload/v1697821134/Screenshot_2023-10-20_at_17.50.41_zy4l0h.png)
 
 Below the post details is the comments section. If there are no comments yet, the user will see a message telling them that there are no comments.
 
@@ -316,7 +350,11 @@ If the user logs in they will see a comment form above the existing comments whe
 
 The Event Page is a page that display all the event details and reviews for one specific event. Users can reach this page by clicking on the event image or review icon on any event on the Events Page or Events Feed page. If the user is the owner of the event, they are also given the option to edit or delete this event by clicking on the three dots that appear next to the post creation date.
 
+![enter image description here](https://res.cloudinary.com/ddsrnz9la/image/upload/v1697821129/Screenshot_2023-10-20_at_17.40.54_asgsxo.png)
+
 If the user selects the Delete option, the event is deleted from the API and is no longer visible on the website, and the user is redirected to Event Create form where they can choose to create a new event. If the user selects the Edit option, they are taken to the Event Edit Form, which has the same fields as the Create Event form, but the fields are already pre-populated with the existing event information. The user can edit the information in the fields and save the changes, which will redirect them to the Event Page where they can see that the event has been updated successfully.
+
+![enter image description here](https://res.cloudinary.com/ddsrnz9la/image/upload/v1697821134/Screenshot_2023-10-20_at_17.51.01_pfvurj.png)
 
 Below the event details is the reviews section. If there are no reviews yet, the user will see a message telling them that there are no reviews.
 
@@ -328,11 +366,15 @@ If the user logs in they will see a review form above the existing reviews where
 
 Each Post Page has a button prompting the user to post a comment for that specific post. The comment form has one field, which is a text input field for users to write their comment in. The field are mandatory, and so the comment will not publish unless there is text in the field. When a comment is published, the comment count visibly increases for that post.
 
+![enter image description here](https://res.cloudinary.com/ddsrnz9la/image/upload/v1697821133/Screenshot_2023-10-20_at_17.53.27_sbjqum.png)
+
 If the comment owner would like to amend the comment once it has been published, they have the option to edit or delete the commentvia the three dots to the right of the published comment.
 
 ### Reviews
 
 Each Event Page has a button prompting the user to post a review for that specific event. If you are the owner of the event, a tooltip will tell you that you can't review your own event, and the button remains inactive. Similarly, if you have already posted a review to the selected event, the tooltip will tell you that you have already reviewed the event and will prevent you from posting another one. 
+
+![enter image description here](https://res.cloudinary.com/ddsrnz9la/image/upload/v1697821133/Screenshot_2023-10-20_at_17.53.45_uev0rc.png)
 
 If the event is not your own, and you haven't previously submitted a review, you can leave a review on an event. The review form has two parts to it. Firstly, it has a dropdown menu that allows the user to select a star rating of 0 - 5 for the event. Then it has a text input field for users to publish their thoughts on the event. Both fields are mandatory, and so the review will not publish unless both are fields are satisfied. When a review is published, the review count visibly increases for that event.
 
@@ -341,6 +383,8 @@ If the review owner would like to amend the review once it has been published, t
 ### Profile Page
     
 Throughout the site, wherever you see profile avatars (e.g. in the popular profiles component, next to posts or events, comments or reviews etc.) users can click on the avatar to view the full Profile Page of that user. In the Navigation Bar, via the authentication icon, users you can access their own profile page as well.
+
+![enter image description here](https://res.cloudinary.com/ddsrnz9la/image/upload/v1697821134/Screenshot_2023-10-20_at_17.55.03_bfez2m.png)
 
 The Profile Page of a user can displays information about that user including their:
 
@@ -363,11 +407,14 @@ When a user signs up and creates a new you.i account, a basic profile is automat
 
 The user's job title, current employer, location and about section remains blank unless the user visits their own Profile Page and clicks on the three dots dropdown to Edit the profile and add their personal details to the page. If they click on the Edit Profile option, they are taken to a form to fill in and submit. Here, they can add or change their profile picture, job title, current employer, location and about section. Users are welcome to add as much or little personal info as they wish.
 
+![enter image description here](https://res.cloudinary.com/ddsrnz9la/image/upload/v1697821135/Screenshot_2023-10-20_at_17.55.40_bjlunh.png)
+
 Each profile also has a follow button that other users can click  to follow and unfollow the profile. Additionally, all the posts and events that the user has published are listed on their Profile Page. These posts and events can be viewed via a React-Bootstrap tabs. 
 
 ### Reusable React Components
 - <b>Asset</b>
 Reused throughout the website to load images, messages and loading spinners.
+![enter image description here](https://res.cloudinary.com/ddsrnz9la/image/upload/v1697821136/Screenshot_2023-10-20_at_17.58.04_xkzgd8.png)
  - <b>Avatar</b>
 Reused to display avatars across different pages of the website
  - <b>NavBar</b>
@@ -376,11 +423,14 @@ Reused across every single page of the website.
 Encountered by users whenever they access an invalid url.
  - <b>Three Dots Edit Delete Dropdown Menu</b>
 Reused to allow users to edit and delete events, posts, comments and reviews. 
+![enter image description here](https://res.cloudinary.com/ddsrnz9la/image/upload/v1697821135/Screenshot_2023-10-20_at_17.57.02_jmzmet.png)
+![enter image description here](https://res.cloudinary.com/ddsrnz9la/image/upload/v1697821137/Screenshot_2023-10-20_at_17.57.17_rfhame.png)
 
 ### Future Features
 - Add event booking features
 - Develop a more sophisticated 'rating' system for reviews that calculates and displays an average rating per event 
 - Develop better UI for viewing review ratings - perhaps with star icons
+- Develop admin crud functionality and frontend to moderate content being posted on the website
 - Develop a mobile app to compliment the website
 
 ## The Skeleton Plane
