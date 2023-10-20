@@ -18,13 +18,13 @@ The you.i site has been passed through the [W3C html Validator](https://validato
 
 #### W3C HTML Validation Results
 
-No errors were found when the deployed Happening URL was passed through W3C HTML validation checker. 9 warning messages warned of trailing slashes in the index.html file, which I quickly resolved.
+No errors were found when the deployed URL was passed through W3C HTML validation checker. 9 warning messages warned of trailing slashes in the index.html file, which I quickly resolved.
 
 ![HTML testing](https://res.cloudinary.com/ddsrnz9la/image/upload/v1697796073/html_test_rbfm0z.png)
 
 #### W3C CSS Validation Results
 
-No errors or warnings were found when the deployed Happening URL was passed through the W3C CSS Validation checker.
+No errors or warnings were found when the deployed URL was passed through the W3C CSS Validation checker.
 
 ![CSS testing](https://res.cloudinary.com/ddsrnz9la/image/upload/v1697796073/css_test_uvo8px.png)
 
