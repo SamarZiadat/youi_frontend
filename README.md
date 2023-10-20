@@ -414,7 +414,6 @@ Each profile also has a follow button that other users can click  to follow and 
 ### Reusable React Components
 - <b>Asset</b>
 Reused throughout the website to load images, messages and loading spinners.
-
 ![enter image description here](https://res.cloudinary.com/ddsrnz9la/image/upload/v1697821136/Screenshot_2023-10-20_at_17.58.04_xkzgd8.png)
  - <b>Avatar</b>
 Reused to display avatars across different pages of the website
@@ -424,9 +423,7 @@ Reused across every single page of the website.
 Encountered by users whenever they access an invalid url.
  - <b>Three Dots Edit Delete Dropdown Menu</b>
 Reused to allow users to edit and delete events, posts, comments and reviews. 
-
 ![enter image description here](https://res.cloudinary.com/ddsrnz9la/image/upload/v1697821135/Screenshot_2023-10-20_at_17.57.02_jmzmet.png)
-
 ![enter image description here](https://res.cloudinary.com/ddsrnz9la/image/upload/v1697821137/Screenshot_2023-10-20_at_17.57.17_rfhame.png)
 
 ### Future Features
