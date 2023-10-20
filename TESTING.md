@@ -4,17 +4,17 @@
 
 ### Table of Contents
 
-   -   [Code Validation](https://https://github.com/SamarZiadat/youi_frontend/TESTING.md#code-validation)
-    -   [Automated Testing](https://https://github.com/SamarZiadat/youi_frontend/TESTING.md#automated-testing)
-    -   [Manual Testing](https://https://github.com/SamarZiadat/youi_frontend/TESTING.md#manual-testing)
-    -   [Browser Compatibility](https://https://github.com/SamarZiadat/youi_frontend/TESTING.md#browser-compatibility)
-    -   [Lighthouse Testing](https://https://github.com/SamarZiadat/youi_frontend/TESTING.md#lighthouse-testing)
-     -   [Peer Review](https://https://github.com/SamarZiadat/youi_frontend/TESTING.md#peer-review)
-    -   [Known Bugs](https://https://github.com/SamarZiadat/youi_frontend/TESTING.md#known-bugs)
+- [Code Validation](https://https://github.com/SamarZiadat/youi_frontend/TESTING.md#code-validation)
+- [Automated Testing](https://https://github.com/SamarZiadat/youi_frontend/TESTING.md#automated-testing)
+- [Manual Testing](https://https://github.com/SamarZiadat/youi_frontend/TESTING.md#manual-testing)
+- [Browser Compatibility](https://https://github.com/SamarZiadat/youi_frontend/TESTING.md#browser-compatibility)
+- [Lighthouse Testing](https://https://github.com/SamarZiadat/youi_frontend/TESTING.md#lighthouse-testing)
+- [Peer Review](https://https://github.com/SamarZiadat/youi_frontend/TESTING.md#peer-review)
+- [Known Bugs](https://https://github.com/SamarZiadat/youi_frontend/TESTING.md#known-bugs)
 
 ### Code Validation
 
-The you.i site has been passed through the [W3C html Validator](https://validator.w3.org/), the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)  and the [ESLint Validator](https://eslint.org/docs/latest/use/getting-started#next-steps).
+The you.i site has been passed through the [W3C html Validator](https://validator.w3.org/), the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) and the [ESLint Validator](https://eslint.org/docs/latest/use/getting-started#next-steps).
 
 #### W3C HTML Validation Results
 
@@ -49,7 +49,7 @@ Avatar renders ✓
 As well as the automated tests, I carried out the following
 manual tests to check all the user story scenarios:
 
-#### Authentication - Logged Out User 
+#### Authentication - Logged Out User
 
 ✓ Typing posts feed url into the browser, the user can not access the feed page. User is redirected to homepage
 
@@ -81,9 +81,9 @@ manual tests to check all the user story scenarios:
 
 ✓ User can't see the sign up button in the navigation bar profile section dropdown menu
 
-✓ The user can see the profile page link in the navigation bar 
+✓ The user can see the profile page link in the navigation bar
 
-✓ The user can see the sign out link in the navigation bar 
+✓ The user can see the sign out link in the navigation bar
 
 ✓ Users can see the Discover menu option in the navigation bar
 
@@ -493,7 +493,6 @@ manual tests to check all the user story scenarios:
 
 ✓ Users can view the number of posts the profile owner has posted
 
-
 ✓ Users can view the number of events the profile owner has posted
 
 ✓ Users can view the number of followers the selected profile has
@@ -553,17 +552,19 @@ manual tests to check all the user story scenarios:
 ✓ Users can input information into their about section on the form
 
 ### Browser Compatibility
+
 Chrome DevTools was used to test the responsiveness of the application on different screen sizes. In addition, testing has been carried out on the following browsers:
--   Chrome Version 107.0.5304.87
--   Edge Version 107.0.1418.24
--   Firefox Version 94.0.1
--   Safari on macOS (Safari Version 15.6)
 
-###  Lighthouse Testing
+- Chrome Version 107.0.5304.87
+- Edge Version 107.0.1418.24
+- Firefox Version 94.0.1
+- Safari on macOS (Safari Version 15.6)
 
-Google Lighthouse in Chrome Developer Tools was used to test the application within the areas of  _Performance_,  _Accessibility_,  _Best Practices_  and  _SEO_. The testing showed the following:
+### Lighthouse Testing
 
--   Home Page - Performance: 72, Accessibility: 94, Best Practises: 875, SEO: 100
+Google Lighthouse in Chrome Developer Tools was used to test the application within the areas of _Performance_, _Accessibility_, _Best Practices_ and _SEO_. The testing showed the following:
+
+- Home Page - Performance: 72, Accessibility: 94, Best Practises: 875, SEO: 100
 
 ![Lighthouse test](https://res.cloudinary.com/ddsrnz9la/image/upload/v1697796073/lighthouse_test_hh2kin.png)
 

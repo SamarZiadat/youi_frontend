@@ -1,6 +1,6 @@
 <h1  align="center">you.i</h1>
 
-This the readme for the you.i project's frontend. View the live project [here](https://youi-frontend-3d2a473770e1.herokuapp.com/). For more information about the backend of this project, please visit [this link](this%20link).
+This the readme for the you.i project's frontend. For more information about the backend, please visit [this link](https://github.com/SamarZiadat/youi_drf_api).
 
 'youi.i' is a professional networking platform designed and created for digital design professionals globally. The name 'you.i' plays on the abbreviation 'ui' (user interface) and the connection between the 'you' and 'I' of the professional individuals networking on the site.
 
@@ -8,26 +8,28 @@ The interactive platform is intended to be used by digital designers to platform
 
 The platform renders differently depending on authentication states of the users. Unregistered users can view other users profiles, and view, search and filter registered users posts and events. Users can also sign up to join the platform, which provides them with additional functionality, such as the ability to create their own professional profile, events and posts. Registered users can also comment on posts and like posts, to support and build a rapport with other designers. They can also bookmark events to show interest in events and find them easily later. They can also review other user's events, as well as follow or unfollow other users.
 
+View the live project [here](https://youi-frontend-3d2a473770e1.herokuapp.com/).
+
 ![Responsive Mockup](https://res.cloudinary.com/ddsrnz9la/image/upload/v1697716247/mockup_u2rbax.png)
 
 ## Table of Contents
 
-- [User Experience Design (UX)](https://github.com/SamarZiadat/you.i#user-experience-design-ux)
-  - [The Strategy Plane](https://github.com/SamarZiadat/you.i#the-strategy-plane)
-    - [Project Objective](https://github.com/SamarZiadat/you.i#project-objective)
-    - [Agile Project Management](https://github.com/SamarZiadat/you.i#agile-project-management)
-    - [User Stories](https://github.com/SamarZiadat/you.i#user-stories)
+- [User Experience Design (UX)](https://github.com/SamarZiadat/youi_frontend#user-experience-design-ux)
+  - [The Strategy Plane](https://github.com/SamarZiadat/youi_frontend#the-strategy-plane)
+    - [Project Objective](https://github.com/SamarZiadat/youi_frontend#project-objective)
+    - [Agile Project Management](https://github.com/SamarZiadat/youi_frontend#agile-project-management)
+    - [User Stories](https://github.com/SamarZiadat/youi_frontend#user-stories)
   - [The Structure Plane](https://github.com/SamarZiadat/you.i#the-structure-plane)
-    - [Features](https://github.com/SamarZiadat/you.i#features)
-    - [Future Features](https://github.com/SamarZiadat/you.i#future-features)
-  - [The Skeleton Plane](https://github.com/SamarZiadat/you.i#the-skeleton-plane)
-    - [Wireframes](https://github.com/SamarZiadat/you.i#wireframes)
-  - [The Surface Plane](https://github.com/SamarZiadat/you.i#the-surface-plane)
-    - [Design](https://github.com/SamarZiadat/you.i#design)
-- [Technologies](https://github.com/SamarZiadat/you.i#technologies)
-- [Testing](https://github.com/SamarZiadat/you.i#testing)
-- [Deployment](https://github.com/SamarZiadat/you.i#deployment)
-- [Credits](https://github.com/SamarZiadat/you.i#heroku-credits)
+    - [Features](https://github.com/SamarZiadat/youi_frontend#features)
+    - [Future Features](https://github.com/SamarZiadat/youi_frontend#future-features)
+  - [The Skeleton Plane](https://github.com/SamarZiadat/youi_frontend#the-skeleton-plane)
+    - [Wireframes](https://github.com/SamarZiadat/youi_frontend#wireframes)
+  - [The Surface Plane](https://github.com/SamarZiadat/youi_frontend#the-surface-plane)
+    - [Design](https://github.com/SamarZiadat/youi_frontend#design)
+- [Technologies](https://github.com/SamarZiadat/youi_frontend#technologies)
+- [Testing](https://github.com/SamarZiadat/youi_frontend#testing)
+- [Deployment](https://github.com/SamarZiadat/youi_frontend#deployment)
+- [Credits](https://github.com/SamarZiadat/youi_frontend#heroku-credits)
 
 ## The Strategy Plane
 
@@ -430,7 +432,7 @@ DM Sans was imported from [Google Fonts](https://fonts.google.com/specimen/DM+Sa
 
 ## Testing
 
-Please click [here]() to read more information about testing you.i's frontend.
+Please click [here](https://github.com/SamarZiadat/youi_frontend/blob/main/TESTING.md) to read more information about testing you.i's frontend.
 
 ## Deployment
 
